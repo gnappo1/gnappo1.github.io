@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cli gem project you don't scare me... ok, maybe a little!"
-date:   2017-05-03 05:03:37 +0000
+date:   2017-05-03 01:03:38 -0400
 ---
 
 
@@ -53,8 +53,13 @@ Once you type the number... voilà, here's your recipe!
 ![](https://scontent.xx.fbcdn.net/v/t34.0-0/p280x280/18280885_10213073414818938_410878111_n.png?_nc_ad=z-m&amp;oh=ed047572d683b5197196f66fde2575b2&amp;oe=590B6E50)
 
 
+You'll be asked if you'd like to open the recipe in a browser page:
 
-You'll be be asked if you want to save the recipe in your Favourite List and show the list or not.
+
+![](https://scontent-lax3-2.xx.fbcdn.net/v/t34.0-12/18309035_10213074574367926_952834520_n.png?oh=8d14eff0a3b00a874700745e098f1d25&amp;oe=590C2078)
+
+
+You'll be be asked if you want to save the recipe in your Favourite List and show the list or not. If the recipe already exists in the list and you type yes because you forgot, you won't create a double anyway!
 
 
 ![](https://scontent.xx.fbcdn.net/v/t34.0-12/18308884_10213073392098370_1145644021_n.png?_nc_ad=z-m&amp;oh=e95c3781ff6892a85f6a74af2b21303a&amp;oe=590B78B7)
@@ -63,7 +68,7 @@ You'll be be asked if you want to save the recipe in your Favourite List and sho
 You'll be asked if you'd like to see more recipes and go back to the list again or to type 'n' to exit.
 
 
-![](https://scontent-lax3-2.xx.fbcdn.net/v/t34.0-12/18336637_10213073396298475_1051829723_n.png?oh=a558e2a686ced52c9276bb69fa851363&amp;oe=590B1F3C)
+![](https://scontent.xx.fbcdn.net/v/t34.0-12/18308782_10213074626689234_2058069064_n.png?_nc_ad=z-m&amp;oh=e5cee9aa97095115eac3d6a89870ec3a&amp;oe=590C0B5D)
 
 
 Once you type 'n', you'll see the goodbye message:
