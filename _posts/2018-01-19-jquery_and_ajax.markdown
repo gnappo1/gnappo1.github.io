@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "JQUERY AND AJAX""
-date:       2018-01-20 01:29:20 +0000
+title:      "JQUERY AND AJAX"
+date:       2018-01-19 20:29:21 -0500
 permalink:  jquery_and_ajax
 ---
 
