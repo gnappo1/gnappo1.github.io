@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "JS: Higher Order Functions "
-date:       2018-05-07 11:57:48 +0000
+date:       2018-05-07 07:57:49 -0400
 permalink:  js_higher_order_functions
 ---
 
@@ -27,18 +27,18 @@ function simpleExample(condition, callback) {
 	}
 }
 
-example(7 > 3,  function () {
+simpleExample(7 > 3,  function () {
   console.log("Yeah, of course 7 is greater than 3!")
 });
 
 //Yeah, of course 7 is greater than 3!
 //But we could also pass a named function as callback
 
-function callback() {
+function namedFunction() {
   console.log("Yeah, of course 7 is greater than 3!")
 }
 
-example(7 > 3,  callback());
+simpleExample(7 > 3,  namedFunction);
 //Yeah, of course 7 is greater than 3!
 
 
@@ -83,12 +83,12 @@ JavaScript also provides us with built-in higher-order operations on arrays, abs
 The **filter** method accepts a callback function. Each element of the array is individually analyzed, and if it returns true once tested against the filter, it will populate the newly created and returned array. In addition to the individual array elements, the callback also has access to the index of the current element and the full array. This function is ***pure***. It does not modify the array it is given!
 
 ```
-//ES6
+//ES6 from this point on
 
 let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
 const evens = array.filter(num => num % 2 == 0);
-console.log(evens)  
 
+console.log(evens)  
 // [0, 2, 4, 6, 8]
 ```
 
@@ -99,24 +99,25 @@ Let's take a closer look:
 //simple function that increases all values in the array by 1
 let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
 const add1 = array.map(n => ++n);
+
 console.log(add1)  
-​
-// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+​// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 ```
 
 The **reduce** method starts with a collection and a variable with an initial value. You then iterate over the collection and append (or add) the values to the variable. The function Array.prototype.reduce(function(total, currentValue, currentIndex, arr), initialValue) returns a single value:
 
 ```
 let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
-const sum = array.reduce((prev, curr) => prev + curr);
-console.log(sum);
-​
-// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+const sumArray = array.reduce((sum, current) => sum + current, 0);
+
+console.log(sumArray);
+// 45;
 ```
 
 When the array has more than 0 elements, you can omit the initialValue argument and will automatically start from the beginning of the array.
 
 The previous three higher order functions allow us to get rid of the imperative loops that are less readable, less concise and more prone to errors. Let's work on a last example that makes use of a combination of them versus a lower-level loop:
+
 
 ```
 const friends = [
@@ -127,25 +128,59 @@ const friends = [
 ];
 
 const superPowers = ["Robert Bruce Banner", "Steven Rogers"];
+
 const addSuperPowers = (friend) => {
   friend.superPowers = superPowers.includes(friend.name);
   return friend;
 }
 
 const isBetween35And50 = (friend) => friend.age >= 35 && friend.age <= 50;
+
 const totalAgeBetween35And50 = (sum, friend) => {
   return sum + friend.age;
 };
 
-const friendsWithSuperPowersBetween35And50 = friends.map(addSuperPowers).filter(isBetween35And50);
+const friendsWSPBetween35And50 = friends.map(addSuperPowers).filter(isBetween35And50);
 
-const totalAgeFriendsWithSuperPowersisBetween35And50 = friendsWithSuperPowersBetween35And50.reduce(totalAgeBetween35And50, 0);
+const totalAgeFriendsWSPIsBetween35And50 = friendsWSPBetween35And50.reduce(totalAgeBetween35And50, 0);
 
-console.log(friendsWithSuperPowersBetween35And50) 
+console.log(friendsWSPBetween35And50);
 // [ {name: "Robert Bruce Banner", age: 43, sex: "Male", superPowers: true},
-{name: "Steven Rogers", age: 38, sex: "Male", superPowers: true} ]
+// {name: "Steven Rogers", age: 38, sex: "Male", superPowers: true} ]
 
-console.log(totalAgeFriendsWithSuperPowersisBetween35And50) 
+console.log(totalAgeFriendsWSPIsBetween35And50);
+// 81
+```
+
+**Let's see how to implement a basic loop to do the same operations**
+
+```
+const withSuperPowersBetween35And50 = (array, collection) => {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    collection.includes(array[i].name) ? array[i].superPowers = true : array[i].superPowers = false;
+    if (array[i].superPowers && array[i].age >= 35 && array[i].age <= 50) {
+      result.push(array[i])
+    }
+  }
+  return result;
+}
+
+const totalAge = (array) => {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i].age
+  }
+  return sum;
+}
+
+const friendsWSPBetween35And50 = withSuperPowersBetween35And50(friends, superPowers);
+
+console.log(friendsWSPBetween35And50);
+// [ {name: "Robert Bruce Banner", age: 43, sex: "Male", superPowers: true},
+// {name: "Steven Rogers", age: 38, sex: "Male", superPowers: true} ]
+
+console.log(totalAge(friendsWSPBetween35And50));
 // 81
 ```
 
