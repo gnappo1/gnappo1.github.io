@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "JS: Partial Application & Currying"
-date:       2018-05-14 11:02:11 +0000
+date:       2018-05-14 07:02:12 -0400
 permalink:  js_partial_application_and_currying
 ---
 
@@ -37,7 +37,7 @@ One important thing to keep in mind is that a partially applied function will al
 const multiply = (a, b) => a * b;
 const identity = multiply.bind(null, 1);
 
-identity(7)
+identity(7) // 7
 ```
 
 The first argument always refers to the current context (*this*). In our case, we only wanted to partially apply the value 1 to the current context without changing it, that's why we passed *null*. As you'll notice from the following example, bind always fixes the arguments from left to right:
@@ -87,7 +87,7 @@ curried(10, 20)(30);    //  60
 curried(10)(20, 30);    //  60
 curried(10)(20)(30);    //  60
 ```
-However, if we tried to pass fewer parameters while partially applying the result wouldn't be the same:
+However, if we tried to pass fewer parameters while partially applying, the result wouldn't be the same:
 
 ```
 const add = (a, b, c) => a + b + c;
@@ -100,7 +100,7 @@ add10(20);
 
 ```
 
-Currying and partial application are widely used when it comes to function composition! Function composition will be the subject of my next blog post and I'll explain how what we discussed today helps us writing complex functions combining pure, curried, smaller functions.
+Currying and partial application are widely used, especially when it comes to function composition! Function composition will be the subject of my next blog post and I'll explain how what we discussed today helps us writing complex functions combining pure, curried, smaller functions.
 
 
 
