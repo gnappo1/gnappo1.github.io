@@ -131,7 +131,7 @@ section {
 
 .hero-art.escher {
     background:
-        url("../assets/hero-escher.svg") center/cover no-repeat,
+        url("../assets/hero-escher.png") center/cover no-repeat,
         var(--card);
 }
 
