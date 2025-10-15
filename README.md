@@ -65,7 +65,7 @@ Example: posts/js-higher-order-functions-2025.md
 
 Register it in /data/writing.json:
 
-```json [
+```json
   {
     "slug": "js-higher-order-functions-2025",
     "title": "JS in 2025: Higher-Order Functions",
@@ -73,7 +73,6 @@ Register it in /data/writing.json:
     "tags": ["javascript", "fp"]
   }
   // , ... other posts
-]
 ```
 
 Open it from the site:
