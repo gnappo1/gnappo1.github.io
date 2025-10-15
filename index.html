@@ -1,36 +1,342 @@
----
-layout: page
----
+<!DOCTYPE html>
+<html lang="en">
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-    </a>
-    {{ post.excerpt }}
-    <p class="post-meta">Posted by {% if site.author %}{{ site.author }}{% else %}{{ site.github_username }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
-</div>
-<hr>
-{% endfor %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matteo Piccini — Full‑Stack Engineer & Educator</title>
+    <meta name="description"
+        content="Portfolio of Matteo Piccini, full‑stack software engineer and educator. React • TypeScript • Python • Flask • Ruby on Rails • Postgres • AWS. Technical Editor." />
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta property="og:title" content="Matteo Piccini — Full‑Stack Engineer & Educator" />
+    <meta property="og:description" content="Selected projects, writing, and teaching resources by Matteo Piccini." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://matteopiccini.com" />
+    <meta property="og:image" content="assets/og-cover.png" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg
+    xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect
+    width='100' height='100' rx='18' fill='%230ea5e9'/%3E%3Ctext x='50' y='60'
+    text-anchor='middle' font-size='64' fill='white' font-family='ui-sans-serif,
+    system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+    Arial, 'Apple Color Emoji', 'Segoe UI Emoji'" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+    <script defer src="js/play.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script defer src="js/router.js"></script>
+    <script defer src="js/posts.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="nav" aria-label="Main">
+            <div class="brand">
+                <div class="logo" aria-hidden="true"><span>MP</span></div>
+                <div class="name">Matteo Piccini</div>
+            </div>
+            <div class="links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">Bio</a>
+                <a href="#tech">Tech</a>
+                <a href="#projects">Projects</a>
+                <!-- <a href="#writing">Writing</a> -->
+                <!-- <a href="#teaching">Teaching</a> -->
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="btn menu-btn" id="menu" aria-haspopup="true" aria-expanded="false" aria-controls="mobile">
+                Menu
+            </button>
+        </nav>
+        <div class="mobile" id="mobile" role="menu" aria-label="Mobile Menu">
+            <a role="menuitem" href="#home">Home</a>
+            <a role="menuitem" href="#about">Bio</a>
+            <a role="menuitem" href="#tech">Tech</a>
+            <a role="menuitem" href="#projects">Projects</a>
+            <!-- <a role="menuitem" href="#writing">Writing</a> -->
+            <!-- <a role="menuitem" href="#teaching">Teaching</a> -->
+            <a role="menuitem" href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <main id="home">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="left reveal">
+                    <div class="kicker">
+                        <span class="dot"></span> Full‑Stack Engineer • Educator •
+                        Technical Editor
+                    </div>
+                    <h1 class="title">
+                        Hi, I am <span class="gradient">Matteo Piccini</span>
+                    </h1>
+                    <p class="tagline">
+                        I build clean, fast, human friendly web apps with React, Python and Flask, and Ruby on Rails.
+                        I teach, mentor and review technical content. I learn quickly and adapt to the work in front of
+                        me.
+                    </p>
+                    <div class="hero-cta">
+                        <a class="btn primary" href="#projects">View projects</a>
+                        <a class="btn" href="#contact">Get in touch</a>
+                        <a class="btn" href="https://github.com/gnappo1" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+                <div class="hero-art escher reveal" aria-hidden="true"></div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <div class="about-card">
+                    <div class="about-accent" aria-hidden="true"></div>
+
+                    <h2 class="section-title"><span class="title-gradient">Bio</span></h2>
+
+
+                    <div class="about-grid">
+                        <div class="about-col">
+                            <p>
+                                <strong>Based in San Diego with long stretches in Italy.</strong>
+                                I teach software engineering and ship full stack projects. I have contributed as a
+                                technical editor
+                                on computer science and mathematics material. I studied mathematics at Sapienza
+                                University of Rome and
+                                now focus fully on software across the stack.
+                            </p>
+                            <br />
+                            <p>
+                                I like fast feedback loops and thoughtful UI details, and I care about helping people
+                                learn.
+                                Outside of work I played volleyball at a professional level and I am currently obsessed
+                                with Padel.
+                                I also love coffee and cooking and I bring that same care and attention to detail to my
+                                work.
+                            </p>
+                        </div>
+
+                        <aside class="about-col about-aside">
+                            <div class="about-group">
+                                <div class="about-h">Strengths</div>
+                                <p>Javascript • React • Python • Flask • Ruby on Rails • Product polish </p>
+                            </div>
+                            <div class="about-group">
+                                <div class="about-h">Interests</div>
+                                <p>Padel • beach volleyball • coffee • cooking • dogs</p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- TECH -->
+        <section id="tech">
+            <div class="container">
+                <div class="about-accent" aria-hidden="true"></div>
+
+                <h2 class="section-title"><span class="title-gradient">Tech I use</span></h2>
+                <p class="section-sub">Tools and platforms I reach for often.</p>
+
+                <ul class="tech-tiles">
+                    <li><img src="assets/logos/react.svg" alt="React"><span>React</span></li>
+                    <li><img src="assets/logos/typescript.svg" alt="TypeScript"><span>TypeScript</span></li>
+                    <li><img src="assets/logos/javascript.svg" alt="JavaScript"><span>JavaScript</span></li>
+                    <li><img src="assets/logos/python.svg" alt="Python"><span>Python</span></li>
+                    <li><img src="assets/logos/flask.svg" alt="Flask"><span>Flask</span></li>
+                    <li><img src="assets/logos/rails.svg" alt="Ruby on Rails"><span>Rails</span></li>
+                    <li><img src="assets/logos/postgresql.svg" alt="PostgreSQL"><span>PostgreSQL</span></li>
+                    <li><img src="assets/logos/jest.svg" alt="Jest"><span>Jest</span></li>
+                    <li><img src="assets/logos/pytest.svg" alt="Pytest"><span>Pytest</span></li>
+                    <li><img src="assets/logos/rspec.svg" alt="RSpec"><span>RSpec</span></li>
+                    <li><img src="assets/logos/vite.svg" alt="Vite"><span>Vite</span></li>
+                    <li><img src="assets/logos/react-query.svg" alt="React Query"><span>React Query</span></li>
+                    <li><img src="assets/logos/axios.svg" alt="Axios"><span>Axios</span></li>
+                    <li><img src="assets/logos/mui.svg" alt="MUI"><span>MUI</span></li>
+                </ul>
+
+                <div class="learn-next">
+                    <span class="label">Learning next</span>
+                    <span class="badge strong">TypeScript</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="container">
+                <div class="about-accent" aria-hidden="true"></div>
+
+                <h2 class="section-title"><span class="title-gradient">Projects</span></h2>
+
+                <p class="section-sub">A few recent and ongoing builds.</p>
+                <div class="grid">
+                    <article class="card reveal">
+                        <div class="thumb" aria-hidden="true"></div>
+                        <h3>Daily Reader (Vite + React)</h3>
+                        <div class="links-row">
+                            <a class="icon-link gh" href="https://github.com/gnappo1/daily-reader" target="_blank"
+                                rel="noopener" aria-label="GitHub"></a>
+                            <!-- <a class="icon-link live" href="https://dailyreader.matteopiccini.com" target="_blank" rel="noopener" aria-label="Live site"></a> -->
+                        </div>
+                        <p>
+                            A personal daily aggregator using public APIs. Client‑only app
+                            built with Vite + React. Nearly complete; polishing UX and API
+                            fallbacks.
+                        </p>
+                        <div class="meta">Vite • React • Static hosting</div>
+                    </article>
+                    <article class="card reveal">
+                        <div class="thumb" aria-hidden="true"></div>
+                        <h3>Cannadiary</h3>
+                        <div class="links-row">
+                            <a class="icon-link gh" href="https://github.com/gnappo1/cannadiary" target="_blank"
+                                rel="noopener" aria-label="GitHub"></a>
+                            <!-- <a class="icon-link live" href="https://cannadiary.matteopiccini.com" target="_blank" rel="noopener" aria-label="Live site"></a> -->
+                        </div>
+                        <p>
+                            React and Flask journaling app with custom theming and shareable
+                            notes. Focus on clean state, pagination, and secure API calls.
+                        </p>
+                        <div class="meta">React • Flask • MUI • React Query</div>
+                    </article>
+                    <article class="card reveal">
+                        <div class="thumb" aria-hidden="true"></div>
+                        <h3>Inkline</h3>
+                        <div class="links-row">
+                            <a class="icon-link gh" href="https://github.com/gnappo1/inkline" target="_blank"
+                                rel="noopener" aria-label="GitHub"></a>
+                            <!-- <a class="icon-link live" href="https://inkline.matteopiccini.com" target="_blank" rel="noopener" aria-label="Live site"></a> -->
+                        </div>
+                        <p>
+                            Lightweight content tool we are wrapping up. Emphasis on smooth
+                            authoring experience and robust data model.
+                        </p>
+                        <div class="meta">
+                            React • TypeScript • Postgres (if applicable)
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WRITING -->
+        <!-- <section id="writing" data-router="view">
+        <div class="container">
+          <h2 class="section-title">Writing</h2>
+          <p class="section-sub">
+            Curated paths from legacy posts and new series.
+          </p>
+          <div id="writing-list" class="list">
+          </div>
+        </div>
+      </section> -->
+
+        <!-- POST DETAIL -->
+        <!-- <section id="post" data-router="view" hidden>
+        <div class="container">
+          <article class="post-article">
+            <h1 id="post-title" class="section-title"></h1>
+            <p id="post-meta" class="section-sub"></p>
+            <div id="post-content" class="post-content"></div>
+          </article>
+        </div>
+      </section> -->
+
+        <!-- TEACHING -->
+        <!-- <section id="teaching">
+        <div class="container">
+          <h2 class="section-title">Teaching resources</h2>
+          <p class="section-sub">
+            Selected cheatsheets refactored as printable guides.
+          </p>
+          <div class="teaching">
+            <div class="note reveal">
+              <strong>JS array methods</strong>
+              <p>Concise reference with pitfalls and safe patterns.</p>
+            </div>
+            <div class="note reveal">
+              <strong>SQL joins that make sense</strong>
+              <p>Visual and verbal explanations you can remember.</p>
+            </div>
+            <div class="note reveal">
+              <strong>React hooks map</strong>
+              <p>When to reach for each hook with tiny examples.</p>
+            </div>
+            <div class="note reveal">
+              <strong>Python dataclasses</strong>
+              <p>Everyday patterns for data modeling and tests.</p>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+                <div class="about-accent" aria-hidden="true"></div>
+
+                <h2 class="section-title"><span class="title-gradient">Contact</span></h2>
+                <p class="section-sub">
+                    This site is fully static so the contact button opens your email
+                    app.
+                </p>
+                <div class="contact">
+                    <div class="box reveal">
+                        <p>
+                            Email me at
+                            <strong id="email-text">picciniuscodes@gmail.com</strong>
+                        </p>
+                        <div style="
+                  display: flex;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  margin-top: 8px;
+                ">
+                            <a class="btn primary" id="mailto"
+                                href="mailto:picciniuscodes@gmail.com?subject=Hello%20Matteo&body=Hi%20Matteo%2C%20I%20found%20your%20portfolio%20and...">Open
+                                email</a>
+                            <button class="btn" id="copy">Copy email</button>
+                        </div>
+                    </div>
+                    <div class="box reveal">
+                        <p>Elsewhere</p>
+                        <p>
+                            <a href="https://github.com/gnappo1" target="_blank" rel="noopener">GitHub</a>
+                            ·
+                            <a href="https://www.linkedin.com/in/matteo-piccini-us/" target="_blank"
+                                rel="noopener">LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div>© <span id="year"></span> Matteo Piccini</div>
+            <div>Built with HTML, CSS, and JS. Hosted on GitHub Pages.</div>
+        </div>
+    </footer>
+
+    <div id="modal-backdrop" hidden></div>
+    <div id="post-modal" role="dialog" aria-modal="true" hidden>
+        <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+        <article class="post-article modal-article">
+            <h1 id="modal-title" class="section-title"></h1>
+            <p id="modal-meta" class="section-sub"></p>
+            <div id="modal-content" class="post-content"></div>
+        </article>
+    </div>
+</body>
+
+</html>
