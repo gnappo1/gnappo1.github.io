@@ -22,6 +22,6 @@ function handleRoute() {
     showView('home');
 }
 
-window.addEventListener('hashchange', handleRoute);
-window.addEventListener('load', handleRoute);
+// window.addEventListener('hashchange', handleRoute);
+// window.addEventListener('load', handleRoute);
   

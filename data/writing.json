@@ -1,12 +1,13 @@
 [
     {
-        "slug": "js-higher-order-functions-2025",
-        "title": "JS: Higher-Order Functions — 2025 Edition",
-        "subtitle": "Modern patterns, immutable style, and live demos",
+        "slug": "react-query-part-1-the-mental-model-with-running-js-examples-32e2",
+        "title": "React Query, Part 1",
+        "subtitle": "The Mental Model (with running JS examples)",
         "tags": [
-            "javascript",
-            "fundamentals",
-            "functional"
+            "react",
+            "js",
+            "react-query",
+            "inkline"
         ]
     }
 ]

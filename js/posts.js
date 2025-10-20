@@ -10,14 +10,15 @@ async function renderWritingList() {
         const res = await fetch(DATA_URL, { cache: 'no-store' });
         if (!res.ok) throw new Error(res.status);
         const items = await res.json();
+        console.log(items)
         list.innerHTML = items.map(it => (
-            `<a class="post" href="#/post/${it.slug}">
-        <div class="left">
-          <span class="title">${it.title}</span>
-          <span class="series">${it.subtitle || ''}</span>
-        </div>
-        <span class="meta">${it.series || (it.tags ? it.tags.join(' • ') : '')}</span>
-      </a>`
+            `<a class="post" href="https://dev.to/picciniuscodes/${it.slug}" rel="noopener" target="_blank">
+                <div class="left">
+                <span class="title">${it.title}</span>
+                <span class="series">${it.subtitle || ''}</span>
+                </div>
+                <span class="meta">${it.series || (it.tags ? it.tags.join(' • ') : '')}</span>
+            </a>`
         )).join('');
     } catch {
         list.innerHTML = '<div class="post"><div class="left"><span class="title">Could not load posts</span></div></div>';
@@ -88,3 +89,4 @@ async function renderPost(slug) {
 // Expose for router
 window.renderWritingList = renderWritingList;
 window.renderPost = renderPost;
+window.addEventListener('load', renderWritingList);
