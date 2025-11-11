@@ -9,5 +9,83 @@
             "react-query",
             "inkline"
         ]
+    },
+    {
+        "slug": "the-two-pointer-technique-from-naive-loops-to-elegant-on-solutions-16h",
+        "title": "Data Traversal With The Two-Pointer Technique",
+        "subtitle": "From Naive Loops to Elegant O(N) Solutions",
+        "tags": [
+            "algorithms",
+            "python",
+            "computer-science",
+            "interview-prep"
+        ]
+    },
+    {
+        "slug": "searching-algorithms-part-1-binary-search-and-the-art-of-cutting-the-search-space-2n08",
+        "title": "Searching Algorithms Part 1",
+        "subtitle": "Binary Search and the Art of Cutting the Search Space",
+        "tags": [
+            "algorithms",
+            "python",
+            "lists",
+            "numbers",
+            "computer-science",
+            "interview-prep"
+        ]
+    },
+    {
+        "slug": "searching-algorithms-part-2-pattern-matching-in-strings-with-z-kmp-and-rabin-karp-178d",
+        "title": "Searching Algorithms Part 2",
+        "subtitle": "Pattern Matching in Strings with Z, KMP, and Rabin-Karp",
+        "tags": [
+            "algorithms",
+            "python",
+            "strings",
+            "computer-science",
+            "interview-prep"
+        ]
+    },
+    {
+        "slug": "searching-algorithms-part-3-exploring-trees-and-graphs-with-bfs-and-dfs-1jc0",
+        "title": "Searching Algorithms Part 3",
+        "subtitle": "Exploring Trees and Graphs with BFS and DFS",
+        "tags": [
+            "algorithms",
+            "python",
+            "trees",
+            "graphs",
+            "interview-prep"
+        ]
+    },
+    {
+        "slug": "sorting-algorithms-part-1-the-quadratic-sorts-bubble-selection-and-insertion-454e",
+        "title": "Sorting Algorithms Part 1",
+        "subtitle": "The Quadratic Sorts — Bubble, Selection, and Insertion",
+        "tags": [
+            "algorithms",
+            "python",
+            "interview-prep"
+        ]
+    },
+    {
+        "slug": "sorting-algorithms-part-2-divide-and-conquer-merge-quick-and-heap-sort-4dkk",
+        "title": "Sorting Algorithms Part 2",
+        "subtitle": "Divide and Conquer — Merge, Quick, and Heap Sort",
+        "tags": [
+            "algorithms",
+            "python",
+            "interview-prep"
+        ]
+    },
+    {
+        "slug": "sorting-algorithms-part-3-linear-time-sorting-counting-radix-and-bucket-co",
+        "title": "Sorting Algorithms Part 3",
+        "subtitle": "Linear-Time Sorting, Counting, Radix, and Bucket",
+        "tags": [
+            "algorithms",
+            "python",
+            "interview-prep"
+        ]
     }
 ]
